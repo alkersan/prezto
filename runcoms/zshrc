@@ -11,3 +11,42 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+export TERM=xterm-256color
+
+# Solarized skin for midnight can be taken here:
+# https://raw.githubusercontent.com/peel/mc/master/solarized.ini
+export MC_SKIN=solarized
+
+setopt globdots
+setopt clobber
+
+alias fig=docker-compose
+alias tf=terraform
+alias subl=subl3
+alias subla='subl -a .'
+alias play=ansible-playbook
+
+# Openstack environment for cli client
+if [[ -s "$HOME/.openstackrc" ]]; then
+  source $HOME/.openstackrc
+fi
+
+if [[ -s "$HOME/.gcloudrc" ]]; then
+  source "$HOME/.gcloudrc"
+fi
+
+if [[ -s /opt/google-cloud-sdk/completion.zsh.inc ]]; then
+  source /opt/google-cloud-sdk/completion.zsh.inc
+fi
+
+# Github access token
+if [[ -s "$HOME/.githubrc" ]]; then
+  source $HOME/.githubrc
+fi
+
+# HDFS access token
+if [[ -s "$HOME/.hdfsrc" ]]; then
+  source $HOME/.hdfsrc
+fi
+
